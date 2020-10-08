@@ -116,7 +116,7 @@ def cart(product_name):          #function to add product to cart for checkout b
         mssg = "success fully added"
     except OSError as err:
         mssg = "something went wrong: {}".formart(err)
-    return {'status':mssg}
+    return {'status':mssg,'result':view_cart()}
 
 # cart("box")
 
@@ -176,6 +176,11 @@ def checkout():     # final checkout function to calculate the amount and discou
     else:
         final_amount = actual_amount
     cart_value.append({'final_amount':final_amount,'actual_amount':actual_amount,'discount':discount})
+    sql='''
+    delete from cart
+    '''
+    cur.execute(sql)
+    conn.commit()
     return {'status':mssg,'result':cart_value}
 
 
@@ -187,7 +192,10 @@ def view_cart():          #function to view cart items by user as well as by adm
     '''
     cur.execute(sql)
     result = cur.fetchall()
-    return result
+    if result:
+        return result
+    else:
+        return 'Add something in cart.'
 
 # view_cart()
 
