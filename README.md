@@ -6,7 +6,7 @@ Steps to follow:
 
 1. zip extarct the code from github repo.
 2. pip install docopt
-3. type mcart.py in cmd.
+3. type 'mcart.py -help' in cmd.
 4. ready to use.
 
 
