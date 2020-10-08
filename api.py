@@ -165,7 +165,8 @@ def checkout():     # final checkout function to calculate the amount and discou
     '''
     cur.execute(sql)
     cart_value = cur.fetchall()
- 
+    if not cart_value:
+        return "Add something in cart first..."
     for item in cart_value:
         # print(item)
         actual_amount += item[1]*item[2]
