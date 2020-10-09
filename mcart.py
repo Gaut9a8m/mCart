@@ -31,7 +31,7 @@ elif args['admin']:
         if args['cart']:
             print(view_cart())
         elif args['bill']:
-            print(checkout())
+            print(view_bill())
         else:
             print("syntax invalid!!!")
             print("Please check documentation")
