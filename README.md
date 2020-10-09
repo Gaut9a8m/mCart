@@ -4,7 +4,7 @@ Cool command line interface ready to use python api using docopt module.
 
 Steps to follow:
 
-1. zip extarct the code from github repo.
+1. zip extract the code from github repo.
 2. pip install docopt
 3. type 'mcart.py -help' in cmd.
 4. ready to use.
